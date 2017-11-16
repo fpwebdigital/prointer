@@ -21,8 +21,8 @@ void cadastroMovimentacao();
 
 int main(void) {
     do{
-        //system("cls");
-        system("clear");
+        //system("clear"); Para Linux
+        system("cls");
         system("color 5F");
         printf("\n\n\n============MENU============\n\n\n1 - Cadastro de Cliente\n2 - Cadastro de Automovel\n3 - Cadastro de Classificacao\n4 - Movimentacao de Classificacao\n5 - Sair\n\nDigite uma opcao: ");
         scanf("%d", &op);
@@ -70,8 +70,8 @@ void cadastroCientes() {
 
     static int linha;
     do {
-        //system("cls");
-        system("clear");
+        //system("clear"); Para Linux
+        system("cls");
         system("color 2F");
         printf("\n\n\n===============================");
         printf("\n|----CADASTRO DE CLIENTES-----|");
@@ -122,8 +122,8 @@ void cadastroAutomovel() {
 
     static int linha;
     do {
-        //system("cls");
-        system("clear");
+        //system("clear"); Para Linux
+        system("cls");
         system("color 2F");
         printf("\n\n\n===============================");
         printf("\n|----CADASTRO DE AUTOMOVEL----|");
@@ -173,8 +173,8 @@ void cadastroClassificacao() {
 
     static int linha;
     do {
-        //system("cls");
-        system("clear");
+        //system("clear"); Para Linux
+        system("cls");
         system("color 2F");
         printf("\n\n\n===============================");
         printf("\n|--CADASTRO DE CLASSIFICACAO--|");
@@ -221,8 +221,8 @@ void cadastroMovimentacao() {
 
     static int linha;
     do {
-        //system("cls");
-        system("clear");
+        //system("clear"); Para Linux
+        system("cls");
         system("color 2F");
         printf("\n\n\n===============================");
         printf("\n|--CADASTRO DE MOVIMENTACAO--|");
