@@ -24,7 +24,7 @@ int main(void) {
         //system("cls");
         system("clear");
         system("color 5F");
-        printf("\n\n\n============MENU============\n\n\n1 - Cadastro de Cliente\n2 - Cadastro de Automovel\n3 - Cadastro de Classificacao\n4 - Movimentacao de Classificacao\n4 - Sair\n\nDigite uma opcao: ");
+        printf("\n\n\n============MENU============\n\n\n1 - Cadastro de Cliente\n2 - Cadastro de Automovel\n3 - Cadastro de Classificacao\n4 - Movimentacao de Classificacao\n5 - Sair\n\nDigite uma opcao: ");
         scanf("%d", &op);
         switch (op) {
             case 1:
@@ -40,8 +40,13 @@ int main(void) {
                 break;
 
             case 4:
+                cadastroMovimentacao();
+                break;
+
+            case 5:
                 system("exit");
                 break;
+
             default:
                 printf("Opcao Invalida");
                 getchar();
@@ -207,11 +212,12 @@ void cadastroMovimentacao() {
     int var_id_movimentacao[SIZE];
     char var_cliente[SIZE] [50];
     char var_automovel[SIZE] [200];
-    int var_qtdediarias[SIZE];
-    int var_valordiaria[SIZE];
-    int var_valortotal_diarias[SIZE];
-    int var_valortotal_semanal[SIZE];
-    int var_valortotal_mensal[SIZE];
+    int var_qtdediarias;
+    int var_valordiaria;
+    int var_valortotal_diarias;
+    int var_valortotal_semanal;
+    int var_valortotal_mensal;
+
 
     static int linha;
     do {
@@ -232,22 +238,23 @@ void cadastroMovimentacao() {
         scanf("%s", &var_automovel [linha]);
 
         printf("\nQuantidade de Diarias: ");
-        scanf("%d", &var_qtdediarias[linha]);
+        scanf("%d", &var_qtdediarias);
 
         printf("\nValor da Locacao por Dia: ");
-        scanf("%d", &var_valordiaria[linha]);
-
-        printf("\nValor total das Diárias: ");
-        scanf("%d", &var_valortotal_diarias[linha]);
-
-        printf("\nValor total Semanal: ");
-        scanf("%d", &var_valortotal_semanal[linha]);
-
-        printf("\nValor total por Mês: ");
-        scanf("%d", &var_valortotal_mensal[linha]);;
+        scanf("%d", &var_valordiaria);
 
 
-        printf("\n===CADASTRO EFETUADO COM SUCESSO===\n\n");
+        var_valortotal_diarias = (var_valordiaria*var_qtdediarias);
+        printf("\nValor total das Diarias R$%d",var_valortotal_diarias);
+
+        var_valortotal_semanal = (var_valordiaria*7);
+        printf("\nValor total por Semana R$%d",var_valortotal_semanal);
+
+        var_valortotal_mensal = (var_valordiaria*30);
+        printf("\nValor total por Mes R$%d",var_valortotal_mensal);
+
+
+        printf("\n\n===CADASTRO EFETUADO COM SUCESSO===\n\n");
         system("color 3F");
         printf("\nDigite 1 para continuar ou outro valor para sair: ");
         scanf("%d", &op);
