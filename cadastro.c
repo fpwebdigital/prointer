@@ -1,5 +1,6 @@
 //
-// Created by Fernando Pires on 16/11/2017.
+// Projeto PROINTER
+// Elaborado por FERNANDO OLIVEIRA PIRES RA: 2662243240
 //
 
 #include <stdio.h>
