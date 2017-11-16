@@ -10,19 +10,14 @@
 #define _CRT_SECURE_NO_WARNINGS
 #pragma warning(disable:4996)
 
-
-
-
-
-
 int op;
-
-
 
 void cadastroCientes();
 void cadastroAutomovel();
-void pesquisa();
-void lista ();
+void cadastroClassificacao();
+void cadastroMovimentacao();
+//void pesquisa();
+//void lista ();
 
 int main(void) {
     do{
@@ -41,7 +36,7 @@ int main(void) {
                 break;
 
             case 3:
-
+                cadastroClassificacao();
                 break;
 
             case 4:
@@ -57,7 +52,7 @@ int main(void) {
 
 }
 
-//FUNÇÃO CADASTRO DE AUTOMÓVEIS
+//FUNÇÃO CADASTRO DE CLIENTES
 void cadastroCientes() {
     int var_id_cliente[SIZE];
     char var_nome[SIZE] [50];
@@ -109,6 +104,7 @@ void cadastroCientes() {
     }while(op==1);
 }
 
+//FUNÇÃO CADASTRO DE AUTOMÓVEIS
 void cadastroAutomovel() {
     int var_id_automovel[SIZE];
     char var_marca[SIZE] [50];
@@ -161,6 +157,103 @@ void cadastroAutomovel() {
     }while(op==1);
 }
 
+//FUNÇÃO CADASTRO DE CLASSIFICAÇÃO
+void cadastroClassificacao() {
+    int var_id_classificacao[SIZE];
+    char var_categoria[SIZE] [50];
+    char var_descricao[SIZE] [200];
+    int var_valordiaria[SIZE];
+    int var_valorsemanal[SIZE];
+    int var_valormensal[SIZE];
+
+    static int linha;
+    do {
+        //system("cls");
+        system("clear");
+        system("color 2F");
+        printf("\n\n\n===============================");
+        printf("\n|--CADASTRO DE CLASSIFICACAO--|");
+        printf("\n===============================\n\n");
+
+        printf("\nID da Classificação: ");
+        scanf("%d", &var_id_classificacao[linha]);
+
+        printf("\nCategoria: ");
+        scanf("%s", &var_categoria [linha]);
+
+        printf("\nDescricao: ");
+        scanf("%s", &var_descricao [linha]);
+
+        printf("\nValor da Diária: ");
+        scanf("%d", &var_valordiaria[linha]);
+
+        printf("\nValor Semanal: ");
+        scanf("%d", &var_valorsemanal[linha]);
+
+        printf("\nValor Mensal: ");
+        scanf("%s", &var_valormensal[linha]);
+
+
+        printf("\n===CADASTRO EFETUADO COM SUCESSO===\n\n");
+        system("color 3F");
+        printf("\nDigite 1 para continuar ou outro valor para sair: ");
+        scanf("%d", &op);
+        linha++;
+    }while(op==1);
+}
+
+//FUNÇÃO CADASTRO DE MOVIMENTAÇÃO
+void cadastroMovimentacao() {
+    int var_id_movimentacao[SIZE];
+    char var_cliente[SIZE] [50];
+    char var_automovel[SIZE] [200];
+    int var_qtdediarias[SIZE];
+    int var_valordiaria[SIZE];
+    int var_valortotal_diarias[SIZE];
+    int var_valortotal_semanal[SIZE];
+    int var_valortotal_mensal[SIZE];
+
+    static int linha;
+    do {
+        //system("cls");
+        system("clear");
+        system("color 2F");
+        printf("\n\n\n===============================");
+        printf("\n|--CADASTRO DE MOVIMENTACAO--|");
+        printf("\n===============================\n\n");
+
+        printf("\nID da Movimentacao ");
+        scanf("%d", &var_id_movimentacao[linha]);
+
+        printf("\nCliente: ");
+        scanf("%s", &var_cliente [linha]);
+
+        printf("\nAutomovel: ");
+        scanf("%s", &var_automovel [linha]);
+
+        printf("\nQuantidade de Diarias: ");
+        scanf("%d", &var_qtdediarias[linha]);
+
+        printf("\nValor da Locacao por Dia: ");
+        scanf("%d", &var_valordiaria[linha]);
+
+        printf("\nValor total das Diárias: ");
+        scanf("%d", &var_valortotal_diarias[linha]);
+
+        printf("\nValor total Semanal: ");
+        scanf("%d", &var_valortotal_semanal[linha]);
+
+        printf("\nValor total por Mês: ");
+        scanf("%d", &var_valortotal_mensal[linha]);;
+
+
+        printf("\n===CADASTRO EFETUADO COM SUCESSO===\n\n");
+        system("color 3F");
+        printf("\nDigite 1 para continuar ou outro valor para sair: ");
+        scanf("%d", &op);
+        linha++;
+    }while(op==1);
+}
 
 //Função Pesquisa
 /*void pesquisa () {
